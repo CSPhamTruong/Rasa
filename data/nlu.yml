@@ -1,0 +1,810 @@
+version: "3.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - hú
+    - hello
+    - hi
+    - chào [em](utterself)
+    - hello [em](utterself)
+    - chào [bạn](utterself)
+    - hi [em](utterself)
+    - [em](utterself) ơi, cho [anh](sexual) hỏi
+    - bot ơi
+    - cho [mình](utterself) hỏi chút
+    - cho [anh](sexual) hỏi chút
+    - chào [bạn](utterself)
+    - chào bot
+    - chào nha
+    - chào
+    - xin chào 
+    - hey
+    - alo alo
+
+- intent: goodbye
+  examples: |
+    - bye
+    - bye [em](utterself)
+    - good bye
+    - bye bye
+    - tạm biệt [em](utterself)
+    - tạm biệt bot nhá
+    - tạm biệt [bạn](sexual) nha
+    - bye [bạn](sexual)
+    - hẹn gặp lại sau
+    - hẹn gặp lại [bạn](sexual) sau
+    - hẹn lần khác [mình](utterself) nói chuyện tiếp
+    - hẹn dịp khác
+    - lát nữa nói chuyện sau
+    - gặp sau nha
+    - hẹn lần khác
+    - lúc khác nói tiếp sau
+    - thôi nha
+    - gặp sau
+    - đi đây
+
+- intent: ask_ability
+  examples: |
+    - làm được gì?
+    - biết làm gì?
+    - [em](utterself) biết làm gì?
+    - [em](utterself) biết làm gì vậy?
+    - [em](utterself) biết làm những gì?
+    - [em](utterself) có chức năng gì?
+    - [em](utterself) có thể làm được gì?
+    - [em](utterself) có thể giúp gì cho anh?
+    - [em](utterself) có thể làm những gì nhỉ?
+    - [em](utterself) làm được những gì?
+    - [bạn](sexual) biết làm gì?
+    - [bạn](sexual) biết làm gì vậy?
+    - [bạn](sexual) biết làm những gì?
+    - [bạn](sexual) có chức năng gì?
+    - [bạn](sexual) có thể làm được gì?
+    - [bạn](sexual) có thể giúp gì cho anh?
+    - [bạn](sexual) có thể làm những gì nhỉ?
+    - [bạn](sexual) làm được những gì?
+    - cho [anh](sexual) xem các thứ mà [em](utterself) có thể làm
+
+- intent: thank_you
+  examples: |
+    - cảm ơn [em](utterself) nhá
+    - thanks [em](utterself) nha
+    - cảm ơn nha
+    - good job
+    - cảm ơn [bạn](sexual) nha
+    - cảm ơn nhiều
+    - thank you
+    - cảm ơn bot nha
+    - thanks bot
+    - cảm ơn
+    - thank you so much
+    - great! Thanks
+
+- intent: accept
+  examples: |
+    - ừa
+    - ừ
+    - uk
+    - ukm
+    - ừm
+    - đúng
+    - đúng rồi
+    - chuẩn
+    - chuẩn không cần chỉnh
+    - phải rồi
+    - okay
+    - ok
+
+- intent: compound
+  examples: |
+    - [anh](sexual) tên [Trường](name), [anh](sexual) muốn [cắt tóc](service) vào [chiều nay](time) được không [em](utterself)?
+    - [tôi](sexual) muốn [cắt tóc](service) vào [chiều nay](time) được không?
+    - [chị](sexual) muốn [làm nail](service) vào [sáng mai](time) được không [em](utterself)?
+    - [anh](sexual) muốn [cắt tóc](service) vào [thứ 2](weekday) [tuần tới](week)?
+    - [bạn](utterself), [mình](sexual) muốn [cắt tóc](service) vào [chiều](time) [mai](day) được không?
+    - [chị](sexual) tên [Hạnh](name), [chị](sexual) muốn [làm nail](service) vào [cuối tuần này](week)?
+    - [anh](sexual) tên [Cường](name), [anh](sexual) muốn [cắt tóc](service)
+    - [mình](sexual) muốn [cắt tóc](service) vào [chủ nhật](weekday) [tháng tới](month)
+
+- intent: ques_name
+  examples: |
+    - [tôi](sexual) tên là [Trường](name)
+    - [anh](sexual) tên là [Văn](name)
+    - [chị](sexual) tên là [Hạnh](name)
+    - [em](sexual) tên là [Vy](name)
+    - [mình](sexual) tên là [Kiệt](name)
+    - [tớ](sexual) tên là [Hùng](name)
+    - [bác](sexual) tên là [Cường](name)
+    - [cô](sexual) tên là [Hồng](name)
+    - [chú](sexual) tên là [Mạnh](name)
+    - [dì](sexual) tên là [Huệ](name)
+    - [con](sexual) tên là [Bình](name)
+    - [cháu](sexual) tên là [Trâm](name)
+    - [ông](sexual) tên là [Dũng](name)
+    - [bà](sexual) tên là [Hằng](name)
+
+- intent: bot_challenge
+  examples: |
+    - [em](utterself) biết hát không?
+    - [em](utterself) biết đàn không?
+    - [em](utterself) kể chuyện ma đi
+    - [em](utterself) kể chuyện cười đi
+    - [em](utterself) ngồi tâm sự với [anh](sexual) được không
+    - [em](utterself) biết khi nào ông trời sập xuống không?
+
+- intent: ques_service
+  examples: |
+    - [anh](sexual) muốn [cắt tóc](service)
+    - [em](sexual) muốn [hớt tóc](service)
+    - [chị](sexual) muốn [tỉa tóc](service)
+    - [chị](sexual) muốn [làm móng](service)
+    - [cô](sexual) muốn [làm nail](service)
+    - [chú](sexual) muốn [mát xa](service)
+    - [anh](sexual) muốn [massage](service)
+    - [em](sexual) muốn [spa](service)
+    - [anh](sexual) muốn [xông hơi](service)
+
+- intent: ques_timeday
+  examples: |
+   - [3 giờ](time) [ngày 6](day) [tháng 2](month) [2021](year)
+   - [1 giờ](time) [ngày 3](day) [tháng tới](month)
+   - [11 giờ 30](time) [ngày mai](day)
+   - [3 giờ chiều](time) [ngày mốt](day)
+   - [Sau giờ làm](time) [thứ 7](weekday) [tuần này](week)
+   - [Sau giờ trưa](time) [hôm nay](day)
+   - [5 giờ](time) [thứ 2](weekday) [tuần sau nữa](week)
+   - [thứ 3](weekday) [tuần này](week)
+   - [thứ 5](weekday) [tuần tới](week)
+   - [chủ nhật](weekday) [tuần sau](week)
+   - [thứ 6](weekday) [tuần sau](week)
+   - [chủ nhật](weekday) [đầu tháng sau](month)
+   - [thứ 7](weekday) [cuối tháng sau](month)
+   - [Cuối ngày](time) [hôm nay](day)
+   - [Cuối tuần này](week)
+   - [Độ 5 giờ chiều](time) [nay](day)
+   - [Trưa](time) [nay](day)
+   - [Chiều](time) [mai](day)
+   - [Tối](time) [mốt](day)
+   - [Đầu năm sau](year)
+   - [Đầu tháng tới](month)
+   - [Cuối năm nay](year)
+   - [Đầu năm nay](year)
+   - [Cuối năm sau](year)
+   - [Đầu năm sau](year)
+   - [Thêm năm nữa](year)
+   - [1 năm nữa](year)
+   - [Cuối năm 2022](year)
+   - [Đầu năm 2021](year)
+   - [2020](year)
+   - [năm tới](year)
+   - [năm sau](year)
+   - [Cuối tháng tới](month)
+   - [Đầu tháng tới](month)
+   - [Cuối tháng sau](month)
+   - [Đầu tháng sau](month)
+   - [Cuối tháng 2](month)
+   - [Đầu tháng 12](month)
+   - [Tháng sau](month)
+   - [Tháng tới](month)
+   - [Tháng 3 tới](month)
+   - [Tháng nữa](month)
+   - [2 tháng nữa](month)
+   - [vài tháng nữa](month)
+   - [Thêm tháng nữa](month)
+   - [Cuối tuần sau](week)
+   - [Đầu tuần sau](week)
+   - [Cuối tuần tới](week)
+   - [Đầu tuần tới](week)
+   - [Cuối tuần này](week)
+   - [Vài tuần nữa](week)
+   - [1 tuần sau](week)
+   - [2 tuần nữa](week)
+   - [2 tuần nữa](week)
+   - [Vài hôm nữa](day)
+   - [Ít hôm nữa](day)
+   - [Ngày 10](day)
+   - [10 ngày nữa](day)
+   - [Ngày mai](day)
+   - [Ngày mốt](day)
+   - [Mai](day) nha
+   - [Hôm nay](day)
+   - [Nay](day)
+   - [Vài tiếng nữa](time)
+   - [Ít giờ nữa](time)
+   - [Chốc nữa](time)
+   - [Chút nữa](time)
+   - [Lát nữa](time)
+   - [Đầu giờ chiều](time)
+   - [Độ trưa](time)
+   - [Đầu giờ chiều](time)
+   - [8 giờ](time) 
+   - [2 tiếng nữa](time)
+   - [Tiếng nữa](time)
+   - [Sau giờ làm](time)
+   - [Tan ca](time)
+   - [5 giờ 45](time)
+   - [6 giờ 20](time)
+
+# TODO: imporve natural language ques_timeday
+
+- lookup: sexual
+  examples: |
+    - tôi
+    - anh
+    - em
+    - chị
+    - bạn
+    - dì
+
+- lookup: year
+  examples: |
+    - năm nay
+    - năm tới
+    - năm tới nữa
+    - năm sau
+    - năm sau nữa
+    - đầu năm nay
+    - đầu năm này
+    - đầu năm sau
+    - đầu năm sau nữa
+    - đầu năm tới
+    - đầu năm tới nữa
+    - đầu năm 2022
+    - đầu 2023
+    - cuối năm nay
+    - cuối năm này
+    - cuối năm sau
+    - cuối năm sau nữa
+    - cuối năm tới
+    - cuối năm tới nữa  
+    - cuối năm 2023
+    - cuối 2024
+    - 2021
+    - 2022
+    - 2023
+    - 2024
+    - 2025   
+
+- lookup: month
+  examples: |
+    - tháng tới
+    - tháng sau
+    - tháng sau nữa
+    - đầu tháng này
+    - đầu tháng tới
+    - đầu tháng tới nữa
+    - đầu tháng sau
+    - đầu tháng sau nữa
+    - cuối tháng này
+    - cuối tháng tới
+    - cuối tháng tới nữa
+    - cuối tháng sau
+    - cuối tháng sau nữa
+    - tháng 1
+    - tháng 2
+    - tháng 3
+    - tháng 4
+    - tháng 5
+    - tháng 6
+    - tháng 7
+    - tháng 8
+    - tháng 9
+    - tháng 10
+    - tháng 11
+    - tháng 12
+    - đầu tháng 1
+    - đầu tháng 2
+    - đầu tháng 3
+    - đầu tháng 4
+    - đầu tháng 5
+    - đầu tháng 6
+    - đầu tháng 7
+    - đầu tháng 8
+    - đầu tháng 9
+    - đầu tháng 10
+    - đầu tháng 11
+    - đầu tháng 12
+    - cuối tháng 1
+    - cuối tháng 2
+    - cuối tháng 3
+    - cuối tháng 4
+    - cuối tháng 5
+    - cuối tháng 6
+    - cuối tháng 7
+    - cuối tháng 8
+    - cuối tháng 9
+    - cuối tháng 10
+    - cuối tháng 11
+    - cuối tháng 12
+    - 1 tháng nữa
+    - 2 tháng nữa
+    - vài tháng nữa
+    - tháng nữa
+
+- lookup: weekday
+  examples: |
+    - thứ 2
+    - thứ 3
+    - thứ 4
+    - thứ 5
+    - thứ 6
+    - thứ 7
+    - chủ nhật
+
+- lookup: week
+  examples: |
+    - cuối tuần sau
+    - cuối tuần sau nữa
+    - cuối tuần tới
+    - cuối tuần tới nữa
+    - đầu tuần sau
+    - đầu tuần sau nữa
+    - đầu tuần tới
+    - đầu tuần tới
+    - tuần sau
+    - tuần sau nữa
+    - tuần tới
+    - tuần tới nữa
+    - tuần nữa
+    - tuần nữa
+    - 1 tuần sau
+    - 2 tuần nữa
+    - 1 tuần tới
+    - 2 tuần nữa
+    - 3 tuần sau
+
+- lookup: day
+  examples: |
+    - mai
+    - ngày mai
+    - mốt
+    - ngày mốt
+    - hôm nay
+    - nay
+    - vài ngày nữa
+    - 5 ngày nữa
+    - 10 ngày nữa
+    - ít ngày nữa
+    - dăm ba hôm nữa
+    - ít hôm nữa
+    - ngày 1
+    - ngày 2
+    - ngày 3
+    - ngày 4
+    - ngày 5
+    - ngày 6
+    - ngày 7
+    - ngày 8
+    - ngày 9
+    - ngày 10
+    - ngày 11
+    - ngày 12
+    - ngày 13
+    - ngày 14
+    - ngày 15
+    - ngày 16
+    - ngày 17
+    - ngày 18
+    - ngày 19
+    - ngày 20
+    - ngày 21
+    - ngày 22
+    - ngày 23
+    - ngày 24
+    - ngày 25
+    - ngày 26
+    - ngày 27
+    - ngày 28
+    - ngày 29
+    - ngày 30
+    - ngày 31
+   
+- lookup: time
+  examples: |
+    - 1 giờ
+    - 2 giờ
+    - 3 giờ
+    - 4 giờ
+    - 5 giờ
+    - 6 giờ
+    - 7 giờ
+    - 8 giờ
+    - 9 giờ
+    - 10 giờ
+    - 11 giờ
+    - 12 giờ
+    - 6 giờ 30
+    - 7 giờ 20
+    - 9 giờ 45
+    - 10 giờ 10
+    - 11 giờ 25
+    - 12 giờ 5
+    - 1 giờ chiều
+    - 2 giờ chiều
+    - 3 giờ chiều
+    - 4 giờ chiều
+    - 5 giờ chiều
+    - 6 giờ chiều
+    - 7 giờ tối
+    - 8 giờ tối
+    - 9 giờ tối
+    - 10 giờ tối
+    - 11 giờ tối
+    - 12 giờ khuya
+    - 1 giờ rưỡi
+    - 2 giờ rưỡi
+    - 3 giờ rưỡi
+    - 4 giờ rưỡi
+    - 5 giờ rưỡi
+    - 6 giờ rưỡi
+    - 7 giờ rưỡi
+    - 8 giờ rưỡi
+    - 9 giờ rưỡi
+    - 10 giờ rưỡi
+    - 11 giờ rưỡi
+    - 12 giờ rưỡi
+    - 1 giờ rưỡi chiều
+    - 2 giờ rưỡi chiều
+    - 3 giờ rưỡi chiều
+    - 4 giờ rưỡi chiều
+    - 5 giờ rưỡi chiều
+    - 6 giờ rưỡi tối
+    - 7 giờ rưỡi tối
+    - 8 giờ rưỡi tối
+    - 9 giờ rưỡi tối
+    - 10 giờ rưỡi tối
+    - 11 giờ rưỡi tối
+    - 5 giờ kém
+    - 6 giờ kém
+    - hơn 7 giờ
+    - 8 giờ
+    - gần 9 giờ
+    - 10 giờ kém 15
+    - 9 giờ kém 20
+    - 8 giờ thiếu 5
+    - 7 giờ thiếu 10
+    - Sau giờ làm
+    - Sau giờ trưa
+    - Tan làm
+    - Tan ca
+    - Sau giờ hành chính
+    - Trưa
+    - Chiều
+    - Tối
+    - Chút nữa
+    - Đầu giờ chiều
+    - Đầu giờ trưa
+    - Trưa nay
+    - Chiều nay
+    - Chút nữa
+    - Chốc nữa
+    - Tí nữa
+    - Xíu nữa
+    - Lát nữa
+    - Hồi nữa
+    - Vài tiếng nữa
+    - Ít giờ nữa
+
+- lookup: service
+  examples: |
+    - cắt tóc
+    - gội đầu
+    - nhuộm tóc
+    - duỗi tóc
+    - uốn tóc
+    - chăm sóc tóc
+    - spa
+    - mát xa
+    - massage
+    - làm nail
+    - làm móng
+    - dũa móng
+    - cắt tỉa
+    - chăm sóc tóc
+    - hấp dầu
+    - dưỡng tóc
+
+- lookup: name
+  examples: |
+    - An
+    - Ân
+    - Bá
+    - Bách
+    - Bảo
+    - Bắc
+    - Bằng
+    - Bích
+    - Biên
+    - Bính
+    - Bối
+    - Bông
+    - Bùi
+    - Cảnh
+    - Cầm
+    - Chăm
+    - Chấn
+    - Chí
+    - Chiến
+    - Chiêu
+    - Chinh
+    - Chính
+    - Chỉnh
+    - Chu
+    - Chúc
+    - Chung
+    - Chương
+    - Công
+    - Cơ
+    - Cúc
+    - Danh
+    - Diễm
+    - Diệu
+    - Doãn
+    - Doanh
+    - Du
+    - Duệ
+    - Dung
+    - Dũng
+    - Duy
+    - Duyên
+    - Dư
+    - Dự
+    - Dương
+    - Đại
+    - Đan
+    - Đào
+    - Đang
+    - Đạt
+    - Đăng
+    - Đệ
+    - Điền
+    - Điệp
+    - Đính
+    - Đỉnh
+    - Đoài
+    - Đoan
+    - Đoàn
+    - Đức
+    - Gia
+    - Giang
+    - Giao
+    - Hải
+    - Hàn
+    - Hạnh
+    - Hảo
+    - Hằng
+    - Hân
+    - Hậu
+    - Hiển
+    - Hoa
+    - Hoạch
+    - Hoài
+    - Hoàng
+    - Học
+    - Hồng
+    - Hợp
+    - Huân
+    - Huấn
+    - Huệ
+    - Hùng
+    - Huy
+    - Huyền
+    - Hưng
+    - Hướng
+    - Hữu
+    - Hỷ
+    - Khá
+    - Khải
+    - Khang
+    - Khanh
+    - Khánh
+    - Khiêm
+    - Khiết
+    - Khoa
+    - Khôi
+    - Khuê
+    - Khuyến
+    - Khương
+    - Kiên
+    - Kiệt
+    - Kim
+    - Kỷ
+    - La
+    - Lạc
+    - Lãm
+    - Lan
+    - Lãng
+    - Lăng
+    - Lâm
+    - Lân
+    - Lễ
+    - Lệ
+    - Liêm
+    - Liên
+    - Liễu
+    - Linh
+    - Loan
+    - Long
+    - Lộc
+    - Lợi
+    - Luân
+    - Luận
+    - Luật
+    - Lượng
+    - Ly
+    - Lý
+    - Mai
+    - Mạnh
+    - Mây
+    - Minh
+    - Nam
+    - Năng
+    - Nga
+    - Ngân
+    - Nghệ
+    - Nghi
+    - Nghị
+    - Nghĩa
+    - Nghiêm
+    - Nghiệp
+    - Ngọ
+    - Ngoan
+    - Ngọc
+    - Ngô
+    - Nguyên
+    - Nguyện
+    - Nguyệt
+    - Nhạc
+    - Nhàn
+    - Nhạn
+    - Nhân
+    - Nhẫn
+    - Nhất
+    - Nhật
+    - Nhi
+    - Nhiệm
+    - Nho
+    - Nhuận
+    - Nhưỡng
+    - Ninh
+    - Nương
+    - Oanh
+    - Ơn
+    - Phát
+    - Phấn
+    - Phế
+    - Phi
+    - Phong
+    - Phổ
+    - Phú
+    - Phúc
+    - Phục
+    - Phùng
+    - Phụng
+    - Phước
+    - Phương
+    - Phượng
+    - Quang
+    - Quảng
+    - Quân
+    - Quốc
+    - Quy
+    - Quý
+    - Quyên
+    - Quyến
+    - Quyền
+    - Quyết
+    - Quỳnh
+    - Sám
+    - San
+    - Sang
+    - Sáng
+    - Sánh
+    - Sâm
+    - Sĩ
+    - Sinh
+    - Sở
+    - Sơn
+    - Sương
+    - Tài
+    - Tạo
+    - Tân
+    - Tây
+    - Thạch
+    - Thái
+    - Thanh
+    - Thành
+    - Thạnh
+    - Thảo
+    - Thăng
+    - Thắng
+    - Thân
+    - Thế
+    - Thi
+    - Thiên
+    - Thịnh
+    - Thọ
+    - Thoa
+    - Thoại
+    - Thông
+    - Thống
+    - Thu
+    - Thuấn
+    - Thục
+    - Thúy
+    - Thủy
+    - Thư
+    - Thực
+    - Thương
+    - Thy
+    - Tiềm
+    - Tiên
+    - Tiền
+    - Tiến
+    - Tín
+    - Tính
+    - Tình
+    - Toại
+    - Toàn
+    - Toản
+    - Tôn
+    - Tống
+    - Trà
+    - Trác
+    - Trạc
+    - Trạch
+    - Trai
+    - Trang
+    - Trâm
+    - Trân
+    - Trấn
+    - Tri
+    - Trí
+    - Trị
+    - Triển
+    - Triết
+    - Triệu
+    - Trinh
+    - Trịnh
+    - Trọng
+    - Trúc
+    - Trung
+    - Trực
+    - Trương
+    - Trường
+    - Tú
+    - Tuân
+    - Tuấn
+    - Tuệ
+    - Tùng
+    - Tuyên
+    - Tuyền
+    - Tuyết
+    - Tùng
+    - Tuyên
+    - Tư
+    - Tứ
+    - Tường
+    - Tý
+    - Tỷ
+    - Tỵ
+    - Uy
+    - Uyên
+    - Uyển
+    - Văn
+    - Vân
+    - Viễn
+    - Việt
+    - Vinh
+    - Vĩnh
+    - Võ
+    - Vỹ
+    - Vương
+    - Vượng
+    - Xuân
+    - Xuyên
+    - Xuyến
+    - Xương
+    - Yên
+    - Yến

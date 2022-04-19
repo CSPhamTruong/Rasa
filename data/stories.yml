@@ -1,0 +1,74 @@
+version: "3.0"
+
+stories:
+- story: base
+  steps:
+  - intent: greet
+  - action: action_greet
+
+  - intent: ques_name
+  - action: action_ask_name
+  - action: action_greet_name
+
+  - intent: ques_service
+  - action: action_ask_service
+
+  - intent: ques_timeday
+  - action: action_ask_timeday
+
+  - intent: accept
+  - action: action_confirm
+  
+  - intent: goodbye
+  - action: utter_goodbye
+
+# - story: base
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - action: utter_ask_name
+
+#   - intent: ques_name
+#   - action: action_ask_name
+#   - action: utter_greet_name
+#   - action: utter_ask_service
+
+#   - intent: ques_service
+#   - action: utter_ask_timeday
+
+#   - intent: ques_timeday
+#   - action: action_ask_timeday
+
+#   - intent: accept
+#   - action: action_confirm
+#   - action: utter_waitting
+#   - action: utter_thank
+  
+#   - intent: goodbye
+#   - action: utter_goodbye
+
+# - story: base 2
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - action: utter_ask_name
+
+#   - intent: ques_name
+#   - action: action_ask_name
+#   - action: utter_greet_name
+#   - action: utter_ask_service
+
+#   - intent: ask_ability
+#   - action: utter_ques_help
+#   - action: utter_ask_service
+
+# - story: conpound
+#   steps:
+#   - intent: compound
+#   - action: action_ask_name
+#   - action: action_ask_timeday
+
+#   - intent: accept
+#   - action: action_confirm
+#   - action: utter_waitting
+#   - action: utter_thank

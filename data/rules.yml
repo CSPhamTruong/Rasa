@@ -1,0 +1,31 @@
+version: "3.0"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_bot_info
+
+- rule: get infomation about users
+  condition:
+  - active_loop: customer_info
+  steps:
+  - intent: ques_name
+  - action: utter_ask_name
+  - action: customer_info
+  - active_loop: customer_info
+
+- rule: get info about appointment
+  condition:
+  - active_loop: appointment_info
+  steps:
+  - intent: ques_name
+  - action: utter_ask_timeday
+  - action: appointment_info
+  - active_loop: appointment_info

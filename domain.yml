@@ -1,0 +1,151 @@
+version: "3.0"
+
+intents:
+  - greet
+  - goodbye
+  - thank_you
+  - accept
+  - ask_ability
+  - bot_challenge
+  - ques_service
+  - ques_timeday
+  - ques_name
+  - greet_name
+  - compound
+
+entities:
+  - sexual
+  - name
+  - service
+  - year
+  - month
+  - week
+  - weekday
+  - day
+  - time
+  - utterself
+  - recommendtime
+
+slots:
+  sexual:
+    type: text
+    mappings: 
+    - type: from_entity
+      entity: sexual
+  name: 
+    type: text
+    mappings: 
+    - type: from_entity
+      entity: name
+  service: 
+    type: text
+    mappings: 
+    - type: from_entity
+      entity: service
+  time: 
+    type: text
+    mappings: 
+    - type: from_entity
+      entity: time
+  day: 
+    type: text
+    mappings: 
+    - type: from_entity
+      entity: day
+  weekday:
+    type: text
+    mappings: 
+    - type: from_entity
+      entity: weekday
+  week: 
+    type: text
+    mappings: 
+    - type: from_entity
+      entity: week
+  month: 
+    type: text
+    mappings: 
+    - type: from_entity
+      entity: month
+  year: 
+    type: text
+    mappings: 
+    - type: from_entity
+      entity: year
+  utterself: 
+    type: text
+    mappings: 
+    - type: from_entity
+      entity: utterself
+
+forms:
+  customer_info:
+    required_slots:
+      - sexual
+      - name
+  appointment_info:
+    required_slots:
+      - time
+      - day
+      - weekday
+      - week
+      - month
+      - year
+
+responses:
+  utter_greet:
+  - text: "Rất hân hạnh được gặp {sexual}"
+
+  utter_greet_name:
+  - text: "Chào {sexual} {name}"
+
+  utter_ask_service:
+  - text: "{utterself} có thể giúp gì được cho {sexual}?"
+
+  utter_ques_help:
+  - text: "{utterself} có thể trò chuyện, đặt lịch hẹn cho các hoạt động như cắt tóc, làm nail.... ngoài ra còn nhiều chức năng thú vị khác nữa"
+
+  utter_ask_name:
+  - text: "{sexual} vui lòng cho {utterself} biết tên để tiện xưng hô với ạ?"
+
+  utter_bot_info:
+  - text: "{utterself} tên là bot, được phát triển bởi AIPower. Do còn đang trong quá trình phát triển nên {utterself} khá ngốc, mong anh chị thông cảm"
+
+  utter_ask_timeday:
+  - text: "{sexual} cho {utterself} hỏi, thời gian mình sử dụng dịch vụ với ạ?"
+
+  utter_ask_day:
+  - text: "{sexual} cho {utterself} hỏi, ngày nào mình sử dụng dịch vụ với ạ?"
+
+  utter_ask_time:
+  - text: "{sexual} cho {utterself} hỏi, mấy giờ mình rảnh ạ?"
+
+  utter_confirm:
+  - text: "{sexual} cho {utterself} xác nhận lại, {sexual} muốn đặt dịch vụ {service} vào lúc {time} {day}-{month}-{year} đúng không?"
+
+  utter_waitting:
+  - text: "{sexual} vui lòng đợi trong giây lát, bên {utterself} đang lên lịch"
+
+  utter_service_busy:
+  - text: "Khung giờ dịch vụ {sexual} đặt hiện tại đang bận, {sexual} vui lòng chọn khung giờ khác"
+
+  utter_recommend:
+  - text: "{sexual} có thể đặt lịch vào lúc {}"
+
+  utter_thank:
+  - text: "Cảm ơn {sexual} đã sử dụng dịch vụ bên {utterself}"
+
+  utter_goodbye:
+  - text: "Chào tạm biệt {sexual} {name}"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+actions:
+  - action_greet
+  - action_ask_name
+  - action_greet_name
+  - action_ask_timeday
+  - action_ask_service
+  - action_confirm
